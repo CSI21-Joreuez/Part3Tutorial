@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "listaEjemplos";
+}
+
+<h1>Lista De Ejemplos</h1>
+@using (Html.BeginForm())
+{
+    <select name="selEjemplos">
+        @foreach (string i in Model)
+        {
+          <option>@i</option>  
+        }
+    </select>
+    <br />
+    <br />
+    if (ViewBag.Nombre != null)
+    { 
+    <h4 style="color:green"> Usuario Seleccionado: @ViewBag.Nombre</h4>
+    }
+ <br />
+ <br />
+ <button type="submit">Seleccionar Usuario</button>
+
+}
+
+@Html.ActionLink("Volver","Index")
+
